@@ -33,6 +33,7 @@ function Login({ onAuth }) {
         withCredentials: true, // ✅ Important for cookies/sessions
         headers: {
           'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
         },
       }
     );
@@ -63,6 +64,7 @@ function Login({ onAuth }) {
           withCredentials: true, // ✅ Required for cross-origin cookies/sessions
           headers: {
             'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
           },
         }
       );
