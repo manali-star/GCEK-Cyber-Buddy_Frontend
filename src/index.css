@@ -1,12 +1,15 @@
+/* index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 html {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 @keyframes gradient {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -17,6 +20,7 @@ body {
   background-size: 200% 200%;
   animation: gradient 5s ease infinite;
 }
+
 body::before {
   content: '';
   position: fixed;
@@ -39,4 +43,36 @@ body::before {
     opacity: 0.6;
     transform: scale(1.05);
   }
+}
+
+/* Custom scrollbar for better UX */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Dark mode scrollbar */
+.dark .custom-scrollbar::-webkit-scrollbar-track {
+  background: #333;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #777;
 }
