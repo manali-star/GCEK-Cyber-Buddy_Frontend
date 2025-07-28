@@ -370,19 +370,29 @@ function App() {
           <Route path="*" element={
             <>
               <main className="flex-grow">
-                <section className="pt-10 px-4 text-center">
-                  <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8 mx-auto font-semibold">
-                    Cyber Shakti Club, GCEK presents
-                  </p>
-                  <h6 className="sm:text-2xl text-gray-600 dark:text-gray-300 mb-8 text-center">
-                    "A software developed to educate and protect users from cybercrime while offering seamless support!"
-                  </h6>
-                  <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">
+                <section className="pt-8 px-4 text-center">
+
+                  {/* Logos at the very top */}
+                  <div className="flex flex-col sm:flex-row justify-center items-center sm:gap-6 mb-4">
+                    <img
+                      src={GCEKlogo} // Replace with actual image path
+                      alt="GCEK Logo"
+                      className="h-24 sm:h-28 md:h-20 object-contain"
+                    />
+                    <img
+                      src={quickhealLogo} // Replace with actual image path
+                      alt="Quick Heal Logo"
+                      className="h-20 sm:h-26 md:h-20 object-contain"
+                    />
+                  </div>
+
+                  <h1 className="text-4xl sm:text-5xl p-8 font-extrabold mb-2">
                     <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient"
                       style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)' }}>
                       GCEK Cyber Buddy
                     </span>
                   </h1>
+
                   <p className="sm:text-2xl text-gray-600 dark:text-gray-300 mb-8 text-center">
                     "24x7 Cyber Buddy – Ask, Learn, Stay Alert, Stay Secure"
                   </p>
@@ -412,34 +422,7 @@ function App() {
                   </div>
                 </section>
 
-                <div className='max-w-6xl mx-auto flex flex-col md:flex-row items-center bg-gradient-to-r from-white/10 to-white/5 dark:from-gray-800/50 dark:to-gray-900/40 rounded-3xl border-white/10 backdrop-blur-md p-8  shadow-xl transition hover:scale-[1.02] hover:shadow-2xl duration-300 mb-2 '>
-                  <section className="max-w-6xl mx-auto">
-                    <h2 className="text-2xl font-bold text-center mb-8 text-gray-900 dark:text-white">🤝 In Collaboration With </h2>
-                    <div className="grid sm:grid-cols-2 gap-10">
-                      {[
-                        {
-                          image: GCEKlogo,
-                          title: 'Govt. College of Engineering, Karad',
-                          desc: 'Institutional support, development, testing, and outreach.'
-                        },
-                        {
-                          image: quickhealLogo,
-                          title: '',
-                          subtitle: '',
-                          desc: 'Cyber Shiksha for Cyber Suraksha'
-                        }].map((item, i) => (
-                          <div key={i} className="flex flex-col items-center p-8 rounded-3xl border border-white/10 backdrop-blur-md shadow-xlbg-gradient-to-r from-white/10 to-white/5 :from-gray-800/50 shadow-lg dark:to-gray-900/40 dark:text-white">
-                            <img src={item.image} alt={item.title || "Collaboration Logo"} className="h-24 w-auto mx-auto mb-4 object-contain" />
-                            <h3 className="font-bold text-xl mb-2 text-cyan-600 dark:text-cyan-400">{item.title}</h3>
-                            {item.subtitle && <p className="text-base font-semibold text-cyan-700 dark:text-cyan-500 mb-3">{item.subtitle}</p>}
-                            <p className="text-base text-gray-800 font-semibold dark:text-gray-300 text-center leading-relaxed">{item.desc}</p>
-                          </div>)
-                        )}
-                    </div>
-                  </section>
-                </div>
-
-                <section className="py-12 px-4">
+                <section className="px-4">
                   <div className="max-w-4xl mx-auto">
                     <h2 className="text-2xl dark:text-white font-bold text-center mb-8">What it will do</h2>
                     <div className="grid sm:grid-cols-2 gap-16">
@@ -485,12 +468,12 @@ function App() {
                   </div>
                 </section>
 
-                <div className="max-w-4xl mx-auto flex justify-center mb-8 ">
+                <div className="max-w-4xl py-6 mx-auto flex justify-center mb-4 ">
                   <div className="bg-gray-50 dark:bg-gray-900 p-8 rounded-2xl border border-green-300/30 dark:border-emerald-500/30 flex flex-col items-center text-center w-full max-w-md shadow-lg shadow-green-100/20 dark:shadow-emerald-900/10  transition transform hover:scale-[1.02] hover:shadow-2xl duration-300">
                     <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Need Help? Contact Us!</h3>
-                    <p className="text-lg text-gray-700 dark:text-gray-300 mb-2"><span className="font-semibold text-cyan-600 dark:text-cyan-400">National Helpline:</span> 1930</p>
-                    <p className="text-lg text-gray-700 dark:text-gray-300 mb-2"><span className="font-semibold text-cyan-600 dark:text-cyan-400">Cyber Crime Portal:</span><a href="https://cybercrime.gov.in" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">cybercrime.gov.in</a></p>
-                    <p className="text-lg text-gray-700 dark:text-gray-300"><span className="font-semibold text-cyan-600 dark:text-cyan-400">GCEK Cyber Shakti Club Helpline:</span>+91-9876543210</p>
+                    <p className="text-lg text-gray-700 dark:text-gray-300 mb-2"><span className="font-semibold text-cyan-600 dark:text-cyan-400">National Helpline: </span> 1930</p>
+                    <p className="text-lg text-gray-700 dark:text-gray-300 mb-2"><span className="font-semibold text-cyan-600 dark:text-cyan-400">Cyber Crime Portal: </span><a href="https://cybercrime.gov.in" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">cybercrime.gov.in</a></p>
+                    <p className="text-lg text-gray-700 dark:text-gray-300"><span className="font-semibold text-cyan-600 dark:text-cyan-400">GCEK Cyber Shakti Club Helpline: </span>8788013579</p>
                   </div>
                 </div>
               </main>
