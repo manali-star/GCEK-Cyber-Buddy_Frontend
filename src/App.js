@@ -238,14 +238,21 @@ function App() {
         }
       });
 
-      const { response: aiReply, source: aiSource, sessionId: newSessionIdFromBackend } = response.data;
+      const { response: rawReply, source: aiSource, sessionId: newSessionIdFromBackend } = response.data;
+
+      // Minimal cleanup: trim & normalize line endings, avoid extra spacing
+      const formattedReply = rawReply
+        .replace(/\r\n/g, '\n')      // Normalize CRLF to LF
+        .replace(/\n{2,}/g, '\n\n')  // Ensure no more than 1 blank line between paragraphs
+        .trim();
 
       const aiMessage = {
-        text: aiReply,
+        text: formattedReply,
         sender: 'ai',
         timestamp: new Date().toISOString(),
         source: aiSource
       };
+
       setSource(aiSource);
 
       setChatSessions(prevSessions => {
@@ -563,7 +570,7 @@ function App() {
           >
             <Menu className="w-6 h-6" />
           </button>
-          <h1 className="text-2xl font-semibold ml-2 md:ml-0">"GCEK Cyber Buddy"</h1>
+          <h1 className="text-2xl font-semibold ml-2 md:ml-0 sticky top-0 bg-white dark:bg-gray-800 z-20">"GCEK Cyber Buddy"</h1>
         </header>
 
         <div className="flex-1 overflow-y-auto p-1 bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors">
